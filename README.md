@@ -6,6 +6,8 @@ Ref.: https://medium.com/@ahmadalammar/simplifying-spring-observability-with-ope
 ## Instalação de Dependências:
 ```sh
 sudo yum install -y maven
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ## Build:
