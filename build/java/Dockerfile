@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk
-ADD build/target/observability-auto-java.jar /observability-auto.jar
-ADD build/target/opentelemetry-javaagent-2.1.0.jar /opentelemetry-javaagent.jar
+ADD target/observability-auto-java.jar /observability-auto.jar
+ADD target/opentelemetry-javaagent-2.1.0.jar /opentelemetry-javaagent.jar
 
 ENV OTEL_EXPORTER_OTLP_ENDPOINT=http://host.docker.internal:4318
 
@@ -9,5 +9,5 @@ ENTRYPOINT java -javaagent:/opentelemetry-javaagent.jar \
                 -Dotel.metrics.exporter=otlp \
                 -Dotel.logs.exporter=otlp \
                 -Dotel.exporter.otlp.endpoint=${OTEL_EXPORTER_OTLP_ENDPOINT} \
-                -Dotel.service.name=sample-service-java \
-                -jar /observability-auto.jarx
+                -Dotel.service.name=sample-java \
+                -jar /observability-auto.jar
